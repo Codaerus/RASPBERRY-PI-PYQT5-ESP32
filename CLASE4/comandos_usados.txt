@@ -1,0 +1,16 @@
+PARA INSTALAR EL BROKER:
+sudo apt install mosquitto mosquitto-clients
+LUEGO:
+sudo nano /etc/mosquitto/mosquitto.conf
+LUEGO AÑADIR AL FINAL DEL .conf ESTAS DOS LINEAS
+allow_anonymous true
+listener 1883 0.0.0.0
+
+PARA EL ENTORNO VIRTUAL:
+
+python3 -m venv PROYECTO_GUI
+source PROYECTO_GUI/bin/activate
+deactivate
+
+PARA INSTALAR PAHO MQTT:
+pip install paho-mqtt==1.6.1
