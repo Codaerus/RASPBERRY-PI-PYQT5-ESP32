@@ -11,7 +11,7 @@ class App(QWidget):
 	self.y = 100
         self.titulo = "MONITOREO"
 	self.initUI()
-       #Configuracion del broker
+        #Configuracion del broker
 	client = mqtt.Client()
         client.on_connect = self.on_connect
 	client.on_message = self.on_message
