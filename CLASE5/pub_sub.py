@@ -4,6 +4,10 @@
 WiFiClient espClient;
 PubSubClient client(espClient);
 unsigned long int t = 0;
+int i = 0;
+int j = 0;
+char msg[30];
+
 void setup() {
   setup_wifi();
   client.setServer("192.168.1.16", 1883);
@@ -32,8 +36,11 @@ void loop() {
   client.loop();
   if(millis()-t>10000)
     {
-      client.publish("canalx","Hola desde ESP32");
+      snprintf(msg,30,"%d,%d",i,j);
+      client.publish("canalx",msg);
       t = millis();
+      i++;
+      j+=2;
     }
 }
 
