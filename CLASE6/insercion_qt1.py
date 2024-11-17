@@ -55,16 +55,16 @@ class App(QWidget):
         self.label2.setText("Valor2: " + pot2)
         self.label2.adjustSize()
         con = pymysql.connect(
-		user="admin",
-		password="Raspi@2022#1", 
-		host="localhost", 
-		database= "MONITOREO")
-		cursor = con.cursor()
-		insert_query = f"INSERT INTO sensores(id,tiempo,pot1,pot2) VALUES (NULL, current_timestamp(),{pot1},{pot2});"
-		cursor.execute(insert_query)
-		con.commit()
-		cursor.close()
-		con.close()
+        user="admin",
+        password="Raspi@2022#1", 
+        host="localhost", 
+        database= "MONITOREO")
+        cursor = con.cursor()
+        insert_query = f"INSERT INTO sensores(id,tiempo,pot1,pot2) VALUES (NULL, current_timestamp(),{pot1},{pot2});"
+        cursor.execute(insert_query)
+        con.commit()
+        cursor.close()
+        con.close()
     def initUI(self):
         self.setGeometry(self.x, self.y, self.w, self.h)
         self.setWindowTitle(self.titulo)
